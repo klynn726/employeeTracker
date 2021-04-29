@@ -1,0 +1,24 @@
+{
+  "name": "employeetracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/klynn726/employeeTracker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/klynn726/employeeTracker/issues"
+  },
+  "homepage": "https://github.com/klynn726/employeeTracker#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "inquirer": "^8.0.0"
+  }
+}
