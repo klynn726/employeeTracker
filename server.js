@@ -3,7 +3,7 @@ const inquirer = require('inquirer');
 const allController = require('./controllers/all')
 
 const mainMenu = async () => {
-  console.log("welcome to employee tracker")
+  console.log("Welcome to employee tracker")
 await inquirer.prompt(
   {
     type: 'list',
@@ -18,20 +18,29 @@ switch(
   answer.action
 )
 {
-  case 'view all employees': 
-  allController.displayAll(mainMenu);
-    console.log("view all employees chosen");
+  case 'view all departments': 
+    allController.displayAllDept(mainMenu);
     break;
   case 'view all roles':
-    console.log("view all roles chosen");
+    allController.displayAllRoles(mainMenu);
     break;
-}
+  case 'view all employees': 
+    allController.displayAllEmployees(mainMenu);
+    break;
+  case 'add a department': 
+    allController.displayAddDepartment(mainMenu);
+    break;
+  case 'add a role': 
+    allController.displayAddRole(mainMenu);
+    break;
+  case 'add an employees': 
+    allController.displayAddEmployee(mainMenu);
+    break;
+  case 'update an employee role': 
+    allController.displayUpdateEmploye(mainMenu);
+    break;
+}})}
 
 
-})
-
-
-
-}
 mainMenu();
 
