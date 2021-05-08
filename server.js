@@ -1,24 +1,37 @@
-const express = require('express');
-const db = require('./db/database');
+const inquirer = require('inquirer');
+// const db = require('./db/tracker');
+const allController = require('./controllers/all')
 
-const PORT = process.env.PORT || 3005;
-const app = express();
+const mainMenu = async () => {
+  console.log("welcome to employee tracker")
+await inquirer.prompt(
+  {
+    type: 'list',
+    name: 'action',
+    message: 'Main Menu',
+    choices: ['view all departments', 'view all roles', 'view all employees', 'add a department', 'add a role', 'add an employee', 'update an employee role' ]
+  }
+)
+.then(answer => {
+  // console.log(answer)
+switch(
+  answer.action
+)
+{
+  case 'view all employees': 
+  allController.displayAll(mainMenu);
+    console.log("view all employees chosen");
+    break;
+  case 'view all roles':
+    console.log("view all roles chosen");
+    break;
+}
 
-const apiRoutes = require('./routes/apiRoutes');
-app.use('/api', apiRoutes);
 
-// Express middleware
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
+})
 
-// Default response for any other request(Not Found) Catch all
-app.use((req, res) => {
-  res.status(404).end();
-}); 
 
-// Start server after DB connection
-db.on('open', () => {
-  app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-  });
-});
+
+}
+mainMenu();
+
