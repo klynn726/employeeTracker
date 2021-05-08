@@ -19,25 +19,25 @@ switch(
 )
 {
   case 'view all departments': 
-    allController.displayAllDept(mainMenu);
+    allController.allDept(mainMenu);
     break;
   case 'view all roles':
-    allController.displayAllRoles(mainMenu);
+    allController.allRoles(mainMenu);
     break;
   case 'view all employees': 
-    allController.displayAllEmployees(mainMenu);
+    allController.allEmployees(mainMenu);
     break;
   case 'add a department': 
-    allController.displayAddDepartment(mainMenu);
+    allController.addDepartment(mainMenu);
     break;
   case 'add a role': 
-    allController.displayAddRole(mainMenu);
+    allController.addRole(mainMenu);
     break;
   case 'add an employees': 
-    allController.displayAddEmployee(mainMenu);
+    allController.addEmployee(mainMenu);
     break;
   case 'update an employee role': 
-    allController.displayUpdateEmploye(mainMenu);
+    allController.updateEmploye(mainMenu);
     break;
 }})}
 
