@@ -1,5 +1,5 @@
 const inquirer = require('inquirer');
-// const db = require('./db/tracker');
+// const db = require('./db/tracker_db');
 const allController = require('./controllers/all')
 
 const mainMenu = async () => {
